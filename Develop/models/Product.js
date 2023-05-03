@@ -26,7 +26,12 @@ Product.init(
         isDecimal: true,
       },
     },
-    
+    stock: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
   },
   {
     sequelize,
