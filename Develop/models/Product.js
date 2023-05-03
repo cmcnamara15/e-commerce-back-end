@@ -16,13 +16,22 @@ Product.init(
       autoIncrement: true,
     },
     product_name: {
-
+      type: DataTypes.STRING,
+      allowNull: false,
     },
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      validate: {
+        isDecimal: true,
+      },
+    },
+    
   },
   {
     sequelize,
     timestamps: false,
-    freezeTableName: true,
+    freezeTableName: true, 
     underscored: true,
     modelName: 'product',
   }
