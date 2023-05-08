@@ -14,10 +14,9 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
-  Category.findAll({
-    raw: true,
-  }).then(data => {
-    res.send(data)
+  Category.findByPk(req.params.id)
+  .then(data => {
+    res.json(data)
   })
 });
 
@@ -29,6 +28,13 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
+  Category.update(req.body, {
+    Where: {
+      id: req.params.id,
+    }
+  }).then((data) => {
+    res.json(data);
+  });
 });
 
 router.delete('/:id', (req, res) => {
