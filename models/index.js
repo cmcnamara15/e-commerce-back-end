@@ -31,7 +31,7 @@ Product.belongsToMany(Tag, {
 Tag.belongsToMany(Product, {
   through: ProductTag,
   foreignKey: 'tag_id',
-  onDelete: 'CASCADE,',
+  onDelete: 'CASCADE',
 })
 
 module.exports = {
