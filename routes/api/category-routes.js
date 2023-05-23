@@ -22,8 +22,8 @@ router.get("/:id", (req, res) => {
     },
     include: Product
   })
-  .then((data) => {
-    res.json(data);
+  .then((results) => {
+    res.json(results);
   })
   .catch((err) => {
     res.status(400).json(err);
@@ -31,18 +31,18 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  Category.create(req.body).then((data) => {
-    res.send(data);
+  Category.create({
+    category_name: req.body.category_name
   })
-  .catch((err) => {
-    res.status(400).json(err);
-  });
-});
+  .then((data) => {
+    res.json(data);
+  })
+})
 
 router.put("/:id", (req, res) => {
   // update a category by its `id` value
   Category.update(req.body, {
-    Where: {
+    where: {
       id: req.params.id,
     },
   }).then((data) => {
@@ -56,9 +56,13 @@ router.put("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
   // delete a category by its `id` value
   console.log(req.params);
-  Category.destroy({ where: { id: req.params.id } }).then((data) => {
-    res.sendStatus(200);
-  });
+  Category.destroy({ 
+    where: { 
+      id: req.params.id 
+    }
+    }).then((data) => {
+    res.json(data);
+  })
 });
 
 module.exports = router;
