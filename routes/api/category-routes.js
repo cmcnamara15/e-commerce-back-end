@@ -12,7 +12,10 @@ router.get("/", (req, res) => {
         attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
       },
     ]
-  }).then((data) => {res.send(data);});
+  })
+    .then((data) => {res.send(data);
+    })
+    .catch((err) => {res.status(400).json(err)})
 });
 
 router.get("/:id", (req, res) => {
