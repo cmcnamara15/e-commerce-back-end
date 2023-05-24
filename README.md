@@ -23,6 +23,8 @@
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
+This project was an exercise in creating the routes and models for the back end of an e-commerce site. Mimicking on a very basic level the sort of code that is written to run and maintain a platform like shopify. With such a strong prevalence of these platforms in our everyday life, it is important for an aspiring developer to understand their fundamental architecture. With this project I feel like I have done just that.
+
 ## Demo Video
 
 [Demo Video](https://drive.google.com/file/d/1I2wlhSZl_DH_RDbGyQDydDUoCLP05-cG/view) <br />
