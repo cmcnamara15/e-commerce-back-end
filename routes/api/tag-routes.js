@@ -7,7 +7,8 @@ router.get('/', (req, res) => {
   // find all tags
   // be sure to include its associated Product data
   Tag.findAll({
-    raw: true
+    include: Product,
+    through: ProductTag
   }).then((data) => {
     res.send(data);
   })
