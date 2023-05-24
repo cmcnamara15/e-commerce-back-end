@@ -7,20 +7,23 @@ router.get('/', (req, res) => {
   // find all tags
   // be sure to include its associated Product data
   Tag.findAll({
-    include: Product,
-    through: ProductTag
-  }).then((data) => {
-    res.send(data);
-  })
+    include: ({ model: Product})
+  }).then((data) => res.status(200).json(data))
+  .catch(err => {res.status(400).json(err)
+  });
 });
 
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
-  Tag.findByPk(req.params.id)
-  .then((data) => {
-    res.json(data);
-  });
+  Tag.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: ({model: Product})
+  })
+  .then((results) => res.status(200).json(results))
+  .catch((err) => res.status(404).json(err));
 });
 
 router.post('/', (req, res) => {
@@ -37,9 +40,8 @@ router.put('/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
-  }).then((data) => {
-    res.json(data);
-  })
+  }).then((data) => res.status(200).json(data))
+  .catch((err) => res.status(404).json(err));
 });
 
 router.delete('/:id', (req, res) => {
