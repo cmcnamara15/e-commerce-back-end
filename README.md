@@ -64,20 +64,17 @@ Email: cmcnamara1991@icloud.com
 
 The following screenshots shows the apps functionality.<br />
 
-<!--
-## Node in terminal<br />
 
-![Screenshot of the program running in the terminal](./assets/screenshot1.png)
+### Routes being run in insomnia<br />
 
-## Generated output file<br />
+![Screenshot of the routes called in insomnia](./assets/Screenshot.png)
 
-![Screenshot of output example](./assets/screenshot2.png)
+## <br />
 
-## Failed Test result<br />
+![Screenshot of the routes called in insomnia](./assets/Screenshot2.png)
 
-![Example of failed test](./assets/failedtest.png)
+## <br />
 
-## Inquirer prompts complete<br />
+![Screenshot of the routes called in insomnia](./assets/Screenshot3.png)
 
-![Example of passed test](./assets/passedtest.png)
- -->
+
